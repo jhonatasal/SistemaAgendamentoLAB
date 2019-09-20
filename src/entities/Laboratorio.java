@@ -5,7 +5,7 @@ public class Laboratorio {
 	private int andar;
 	private int computadores;
 	private Usuario locador;
-
+	
 	public Laboratorio() {
 
 	}

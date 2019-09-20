@@ -1,14 +1,21 @@
 package entities;
 
-public class Usuario {
+public abstract class Usuario {
 	private String nome;
 	private int idade;
-	private int cpf;
+	private String cpf;
+	private int id;
 
-	public Usuario(String nome, int idade, int cpf) {
+	public Usuario() {
+
+	}
+
+	public Usuario(String nome, int idade, String cpf, int id) {
+		super();
 		this.nome = nome;
 		this.idade = idade;
 		this.cpf = cpf;
+		this.id = id;
 	}
 
 	public String getNome() {
@@ -27,12 +34,20 @@ public class Usuario {
 		this.idade = idade;
 	}
 
-	public int getCpf() {
+	public String getCpf() {
 		return cpf;
 	}
 
-	public void setCpf(int cpf) {
+	public void setCpf(String cpf) {
 		this.cpf = cpf;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 
 }
