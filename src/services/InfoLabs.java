@@ -25,7 +25,7 @@ public class InfoLabs {
 	}
 
 	private List<Laboratorio> obterListaDeLaboratorios() throws FileNotFoundException, IOException {
-		String path = "C:\\Users\\jhona\\OneDrive\\Curso Java\\WS-Eclipse\\SistemaAgendamentoLAB\\ARQUIVOINFOLABS\\infoLabs.txt";
+		String path = "C:\\Users\\jhona\\Desktop\\Projetos\\Ambiente Curso\\SistemaAgendamentoLAB\\ARQUIVOINFOLABS\\infoLabs.txt";
 		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 			List<Laboratorio> laboratorios = new ArrayList<>();
 			while (!(br.readLine() == null)) {
