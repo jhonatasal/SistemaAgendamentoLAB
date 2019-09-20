@@ -14,7 +14,8 @@ public class Program {
 		InfoLabs il = new InfoLabs();
 		CadastroUsuario ca = new CadastroUsuario();
 		System.out.println("BEM VINDO AO PROGRAMA DE AGENDAMENTO DE LABORATORIO!");
-		ca.cadastrarUsuario(ca);
+		il.mostraLabs(il);
+		//ca.cadastrarUsuario(ca);
 
 		sc.close();
 	}

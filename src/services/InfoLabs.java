@@ -8,7 +8,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import javax.sound.midi.MidiDevice.Info;
+
 import entities.Laboratorio;
+import entities.Usuario;
 
 public class InfoLabs {
 	private List<Laboratorio> laboratorios = new ArrayList<>();
@@ -18,14 +21,6 @@ public class InfoLabs {
 	}
 
 	public InfoLabs(List<Laboratorio> laboratorios) {
-		this.laboratorios = laboratorios;
-	}
-
-	public List<Laboratorio> getLaboratorios() {
-		return laboratorios;
-	}
-
-	public void setLaboratorios(List<Laboratorio> laboratorios) {
 		this.laboratorios = laboratorios;
 	}
 
@@ -51,7 +46,16 @@ public class InfoLabs {
 		return null;
 	}
 
-	public void reservarLab() {
+	public void mostraLabs(InfoLabs il) throws FileNotFoundException, IOException {
+		int qtd = il.obterListaDeLaboratorios().size();
+		for (int i = 0; i < qtd; i++) {
+			Laboratorio lab = il.obterListaDeLaboratorios().get(i);
+			System.out.println(lab);
+		}
+
+	}
+
+	public void reservarLab(Usuario usuario) {
 
 	}
 }

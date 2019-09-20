@@ -5,7 +5,8 @@ public class Laboratorio {
 	private int andar;
 	private int computadores;
 	private Usuario locador;
-	
+	private boolean status;
+
 	public Laboratorio() {
 
 	}
@@ -38,5 +39,26 @@ public class Laboratorio {
 
 	public void setComputadores(int computadores) {
 		this.computadores = computadores;
+	}
+
+	public Usuario getLocador() {
+		return locador;
+	}
+
+	public void setLocador(Usuario locador) {
+		this.locador = locador;
+	}
+
+	public boolean isStatus() {
+		return status;
+	}
+
+	public void setStatus(boolean status) {
+		this.status = status;
+	}
+
+	@Override
+	public String toString() {
+		return "Nome do Laboratorio: " + getNome() + " Andar: " + getAndar() + " Computadores: " + getComputadores();
 	}
 }
