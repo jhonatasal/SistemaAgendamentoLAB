@@ -1,14 +1,11 @@
 package services;
 
-import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
-import javax.sound.midi.MidiDevice.Info;
 
 import entities.Laboratorio;
 import entities.Usuario;
@@ -26,24 +23,23 @@ public class InfoLabs {
 
 	private List<Laboratorio> obterListaDeLaboratorios() throws FileNotFoundException, IOException {
 		String path = "C:\\Users\\jhona\\Desktop\\Projetos\\Ambiente Curso\\SistemaAgendamentoLAB\\ARQUIVOINFOLABS\\infoLabs.txt";
-		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
-			List<Laboratorio> laboratorios = new ArrayList<>();
-			while (!(br.readLine() == null)) {
-				Laboratorio lab = new Laboratorio();
-				String line = br.readLine();
-				if (line != null) {
-					String vetor[] = line.split(",");
-					lab.setNome(vetor[0]);
-					lab.setAndar(Integer.parseInt(vetor[1]));
-					lab.setComputadores(Integer.parseInt(vetor[2]));
-					laboratorios.add(lab);
-				}
+		File file = new File(path);
+		Scanner sc = null;
+		sc = new Scanner(file);
+		List<Laboratorio> laboratorios = new ArrayList<>();
+		while (sc.hasNextLine()) {
+			Laboratorio lab = new Laboratorio();
+			String line = sc.nextLine();
+			if (line != null) {
+				String vetor[] = line.split(",");
+				lab.setNome(vetor[0]);
+				lab.setAndar(Integer.parseInt(vetor[1]));
+				lab.setComputadores(Integer.parseInt(vetor[2]));
+				laboratorios.add(lab);
 			}
-			return laboratorios;
-		} catch (IOException e) {
-			e.getMessage();
 		}
-		return null;
+		sc.close();
+		return laboratorios;
 	}
 
 	public void mostraLabs(InfoLabs il) throws FileNotFoundException, IOException {
@@ -55,7 +51,5 @@ public class InfoLabs {
 
 	}
 
-	public void reservarLab(Usuario usuario) {
-
-	}
+	
 }

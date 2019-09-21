@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import services.CadastroUsuario;
 import services.InfoLabs;
+import services.ReservaLab;
 
 public class Program {
 
@@ -16,7 +17,6 @@ public class Program {
 		System.out.println("BEM VINDO AO PROGRAMA DE AGENDAMENTO DE LABORATORIO!");
 		il.mostraLabs(il);
 		//ca.cadastrarUsuario(ca);
-
 		sc.close();
 	}
 
